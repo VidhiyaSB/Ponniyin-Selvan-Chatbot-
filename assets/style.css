@@ -1,0 +1,435 @@
+/* Ponniyin Selvan Historical Theme - Enhanced */
+
+/* Color Palette */
+:root {
+    --chola-gold: #D4A84B;
+    --chola-gold-light: #E8C878;
+    --chola-bronze: #8B6914;
+    --ancient-brown: #3D2914;
+    --temple-red: #9D3535;
+    --palm-leaf: #F5E6C8;
+    --palm-leaf-dark: #DBC9A0;
+    --night-blue: #1A1A2E;
+    --night-blue-light: #252547;
+    --text-light: #F0E6D3;
+    --text-dark: #2D1810;
+}
+
+/* Global Styles */
+.gradio-container {
+    background: linear-gradient(135deg, #0D0D1A 0%, #1A1A2E 40%, #2A1F14 100%) !important;
+    font-family: 'Georgia', 'Noto Serif', serif !important;
+    min-height: 100vh;
+    color: var(--text-light) !important;
+    /* Force light text globally */
+}
+
+/* Ensure all generic text is visible */
+p,
+span,
+div,
+label {
+    color: inherit;
+}
+
+/* Force dark background for specific Gradio containers to fix light-on-light text */
+.block,
+.panel,
+.tabs,
+.tabitem,
+.gap {
+    background: transparent !important;
+}
+
+/* Fix Tab Navigation */
+.tab-nav {
+    border-bottom: 2px solid var(--chola-bronze) !important;
+}
+
+.tab-nav button {
+    color: var(--palm-leaf) !important;
+    /* Light text for unselected tabs */
+    font-weight: bold !important;
+    opacity: 0.7;
+}
+
+.tab-nav button.selected {
+    color: var(--chola-gold) !important;
+    /* Gold text for selected */
+    border-bottom: 3px solid var(--chola-gold) !important;
+    font-weight: 900 !important;
+    opacity: 1;
+    background: rgba(212, 168, 75, 0.1) !important;
+}
+
+/* Labels and Headings */
+label,
+span.svelte-1gfkn6j,
+.gr-label {
+    color: var(--chola-gold) !important;
+    /* Gold labels are visible on dark */
+    font-weight: 600 !important;
+    background: transparent !important;
+}
+
+/* Clear Chat Button - High Contrast */
+#clear-btn {
+    background: #3D0000 !important;
+    color: #FFB3B3 !important;
+    border: 1px solid #500000 !important;
+}
+
+/* Hide default Gradio footer */
+footer {
+    display: none !important;
+}
+
+/* Header Styling */
+.app-header {
+    text-align: center;
+    padding: 25px 20px;
+    background: linear-gradient(180deg, rgba(212, 168, 75, 0.25) 0%, rgba(212, 168, 75, 0.05) 100%);
+    border-bottom: 3px solid var(--chola-gold);
+    margin-bottom: 25px;
+    border-radius: 0 0 20px 20px;
+}
+
+.app-title {
+    font-size: 2.5rem;
+    color: var(--chola-gold) !important;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 168, 75, 0.3);
+    margin: 0 0 5px 0;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.app-subtitle {
+    color: var(--palm-leaf) !important;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    font-style: italic;
+    opacity: 0.95;
+}
+
+/* Chatbot Container */
+.chatbot-container {
+    border: 2px solid var(--chola-bronze) !important;
+    border-radius: 16px !important;
+    background: linear-gradient(180deg, rgba(26, 26, 46, 0.95) 0%, rgba(45, 35, 25, 0.9) 100%) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 168, 75, 0.1) !important;
+}
+
+/* Chat Messages */
+.message {
+    border-radius: 14px !important;
+    padding: 16px 18px !important;
+    margin: 10px 5px !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+}
+
+/* User Messages - Rich Red */
+.message.user,
+[data-testid="user"] {
+    background: linear-gradient(135deg, #8B2942 0%, #5E1F30 100%) !important;
+    color: #F5E6C8 !important;
+    border: 1px solid rgba(212, 168, 75, 0.4) !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Bot Messages - Warm Cream */
+.message.bot,
+[data-testid="bot"] {
+    background: linear-gradient(135deg, #E6D5B8 0%, #D4C4A8 100%) !important;
+    color: #2A1F14 !important;
+    border: 1px solid var(--chola-bronze) !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Input Field */
+textarea,
+input[type="text"],
+.gr-textbox textarea {
+    background: #E8DCC0 !important;
+    /* Darker parchment */
+    color: #2A1F14 !important;
+    border: 2px solid var(--chola-bronze) !important;
+    border-radius: 12px !important;
+    font-size: 1rem !important;
+    padding: 12px 16px !important;
+}
+
+textarea::placeholder,
+input::placeholder {
+    color: #6B5A48 !important;
+    opacity: 1 !important;
+}
+
+textarea:focus,
+input[type="text"]:focus {
+    border-color: var(--chola-gold) !important;
+    box-shadow: 0 0 15px rgba(212, 168, 75, 0.4) !important;
+    outline: none !important;
+}
+
+/* Primary Buttons - Gold Gradient */
+button.primary,
+button[variant="primary"],
+.gr-button-primary {
+    background: linear-gradient(135deg, var(--chola-gold) 0%, #B8922E 100%) !important;
+    color: #1A0F05 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    padding: 10px 20px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 12px rgba(212, 168, 75, 0.3) !important;
+}
+
+button.primary:hover,
+button[variant="primary"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(212, 168, 75, 0.5) !important;
+    background: linear-gradient(135deg, var(--chola-gold-light) 0%, var(--chola-gold) 100%) !important;
+}
+
+/* Secondary Buttons */
+button.secondary,
+button[variant="secondary"],
+.gr-button-secondary {
+    background: rgba(212, 168, 75, 0.15) !important;
+    color: var(--chola-gold) !important;
+    border: 2px solid var(--chola-bronze) !important;
+    border-radius: 10px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+}
+
+button.secondary:hover,
+button[variant="secondary"]:hover {
+    background: rgba(212, 168, 75, 0.25) !important;
+    border-color: var(--chola-gold) !important;
+}
+
+/* Examples Gallery - Fixed Visibility */
+.gr-examples,
+.gr-sample-textbox,
+.gr-samples {
+    background: rgba(26, 26, 46, 0.8) !important;
+    border-radius: 12px !important;
+    padding: 15px !important;
+}
+
+.gr-examples button,
+.gr-sample-textbox button,
+.examples button,
+[class*="example"] button {
+    background: linear-gradient(135deg, rgba(212, 168, 75, 0.2) 0%, rgba(139, 105, 20, 0.3) 100%) !important;
+    color: var(--palm-leaf) !important;
+    border: 1px solid var(--chola-bronze) !important;
+    border-radius: 8px !important;
+    padding: 10px 14px !important;
+    font-size: 0.9rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.gr-examples button:hover,
+.examples button:hover,
+[class*="example"] button:hover {
+    background: linear-gradient(135deg, rgba(212, 168, 75, 0.35) 0%, rgba(139, 105, 20, 0.45) 100%) !important;
+    border-color: var(--chola-gold) !important;
+    color: var(--chola-gold-light) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Checkbox Toggle */
+.gr-checkbox,
+input[type="checkbox"] {
+    accent-color: var(--chola-gold) !important;
+}
+
+.voice-toggle {
+    background: rgba(212, 168, 75, 0.1) !important;
+    border: 1px solid var(--chola-bronze) !important;
+    border-radius: 10px !important;
+    padding: 12px 15px !important;
+}
+
+.voice-toggle label,
+.voice-toggle span {
+    color: var(--chola-gold) !important;
+    /* Force Voice Toggle text gold */
+    font-weight: 600 !important;
+}
+
+/* Sources Panel */
+.sources-panel {
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(45, 35, 25, 0.85) 100%) !important;
+    border: 1px solid var(--chola-bronze) !important;
+    border-radius: 12px !important;
+    padding: 18px !important;
+    color: var(--palm-leaf) !important;
+}
+
+.sources-panel strong {
+    color: var(--chola-gold) !important;
+}
+
+/* Audio Player */
+audio {
+    width: 100% !important;
+    border-radius: 10px !important;
+    background: rgba(212, 168, 75, 0.1) !important;
+}
+
+/* Decorative Border */
+.decorative-border {
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--chola-gold) 50%, transparent 100%);
+    margin: 20px 0;
+    opacity: 0.6;
+}
+
+/* Character Cards - Enhanced */
+.character-card {
+    background: linear-gradient(145deg, rgba(45, 35, 25, 0.95) 0%, rgba(26, 26, 46, 0.9) 100%);
+    border: 1px solid var(--chola-bronze);
+    border-left: 4px solid var(--chola-gold);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin: 12px 0;
+    transition: all 0.3s ease;
+}
+
+.character-card:hover {
+    transform: translateX(5px);
+    border-left-width: 6px;
+    box-shadow: 0 4px 15px rgba(212, 168, 75, 0.2);
+}
+
+.character-name {
+    color: var(--chola-gold);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.character-desc {
+    color: var(--palm-leaf);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+/* Accordion */
+.gr-accordion {
+    background: rgba(26, 26, 46, 0.6) !important;
+    border: 1px solid var(--chola-bronze) !important;
+    border-radius: 10px !important;
+}
+
+/* CORRECT SELECTOR FROM INSPECTION */
+.gr-accordion .label-wrap,
+.gr-accordion .label-wrap span,
+.gr-accordion .icon,
+.label-wrap span {
+    color: #FFFFFF !important;
+    /* Force Header White */
+    fill: #FFFFFF !important;
+    /* Force Icon White */
+    font-weight: bold !important;
+    font-size: 1.1rem !important;
+    opacity: 1 !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+/* Also catch legacy structure just in case */
+.gr-accordion summary,
+.gr-accordion summary span {
+    color: #FFFFFF !important;
+}
+
+/* CATCH ALL - Force ALL accordion content to be visible */
+.gr-accordion * {
+    color: #FFFFFF !important;
+    /* Pure white */
+}
+
+.gr-accordion summary,
+.gr-accordion summary * {
+    color: #FFFFFF !important;
+}
+
+/* Fix Input Containers in Accordion (remove white bg) */
+.gr-accordion .block,
+.gr-accordion .form,
+.gr-accordion .wrap,
+.gr-accordion .label-wrap,
+.gr-accordion .container,
+.gr-accordion .input-box {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Ensure labels inside accordion are visible */
+.gr-accordion label span {
+    background: transparent !important;
+    color: var(--chola-gold) !important;
+}
+
+/* Labels */
+label,
+.gr-label {
+    color: var(--palm-leaf) !important;
+    font-weight: 500 !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(26, 26, 46, 0.5);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--chola-bronze) 0%, var(--chola-gold) 100%);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--chola-gold);
+}
+
+/* Markdown Content */
+.markdown-text,
+.prose {
+    color: inherit !important;
+}
+
+.markdown-text h1,
+.markdown-text h2,
+.markdown-text h3 {
+    color: var(--chola-gold) !important;
+    border-bottom: 1px solid rgba(212, 168, 75, 0.3);
+    padding-bottom: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .app-title {
+        font-size: 1.8rem;
+    }
+
+    .app-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .character-card {
+        padding: 12px 14px;
+    }
+}
